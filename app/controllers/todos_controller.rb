@@ -35,6 +35,11 @@ class TodosController < ApplicationController
     end
   end
 
+  def clone
+    @base = Todo.find(params[:id])
+    @todo = @base.dup
+  end
+
   def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy

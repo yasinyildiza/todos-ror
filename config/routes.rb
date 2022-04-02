@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   root "todos#index"
 
   resources :todos
+
+  resources :todos do
+    member do
+      get :clone
+    end
+  end
 end

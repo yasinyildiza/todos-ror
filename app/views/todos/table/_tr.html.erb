@@ -4,6 +4,7 @@
 <td><%= record.updated_at %></td>
 <td><%= link_to 'Show', record %></td>
 <td><%= link_to 'Edit', edit_todo_path(record) %></td>
+<td><%= link_to 'Clone', clone_todo_path(record) %></td>
 <td><%= link_to "Destroy", record,
   data: {
     turbo_method: :delete,
