@@ -1,0 +1,12 @@
+<td><%= link_to record.id, record %></td>
+<td><%= record.title %></td>
+<td><%= record.created_at %></td>
+<td><%= record.updated_at %></td>
+<td><%= link_to 'Show', record %></td>
+<td><%= link_to 'Edit', edit_todo_path(record) %></td>
+<td><%= link_to "Destroy", record,
+  data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  }
+%></td>

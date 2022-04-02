@@ -1,15 +1,30 @@
-<h1><%= @todo.title %></h1>
-
-<p><%= @todo.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_todo_path(@todo) %></li>
-  <li><%= link_to "Destroy", todo_path(@todo),
+<fieldset>
+  <legend>Todo: <%= @todo.title %> (<%= @todo.id %>)</legend>
+  <%= link_to 'Edit', edit_todo_path(@todo) %>
+  <%= link_to "Destroy", todo_path(@todo),
     data: {
       turbo_method: :delete,
       turbo_confirm: "Are you sure?"
     } %>
-  </li>
-</ul>
-
-<%= link_to "Back", todos_path %>
+  <table border="1">
+    <tbody>
+      <tr>
+        <th>Title</th>
+        <td><%= @todo.title %></td>
+      </tr>
+      <tr>
+        <th>Body</th>
+        <td><%= @todo.body %></td>
+      </tr>
+      <tr>
+        <th>Created at</th>
+        <td><%= @todo.created_at %></td>
+      </tr>
+      <tr>
+        <th>Updated at</th>
+        <td><%= @todo.updated_at %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back", todos_path %>
+</fieldset>

@@ -1,0 +1,21 @@
+<fieldset>
+  <legend><%= title %> (<%= records.count %>)</legend>
+  <%= link_to 'New', new_path %>
+  <% if records.count > 0 %>
+    <table border="1">
+      <thead>
+        <%= render partial: thead %>
+      </thead>
+
+      <tbody>
+        <% records.each do |record| %>
+          <tr>
+            <%= render partial: tr, locals: {record: record} %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h4>No record found</h4>
+  <% end %>
+</fieldset>

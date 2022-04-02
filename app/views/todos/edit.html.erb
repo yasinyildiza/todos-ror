@@ -1,5 +1,6 @@
-<h1>Edit Todo</h1>
-
-<%= render "form", todo: @todo %>
+<fieldset>
+  <legend>Edit <%= @todo.title %> (<%= @todo.id %>)</legend>
+  <%= render "form", todo: @todo %>
+</fieldset>
 
 <%= link_to "Back", @todo %>
